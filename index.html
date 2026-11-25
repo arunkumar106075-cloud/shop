@@ -1,103 +1,160 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>tThiru Murugan store</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiru Murugan Store</title>
 
-<style>
-body {
-    font-family: Arial;
-    background: #eef2f3;
-    margin: 0;
-}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f5f5;
+        }
 
-header {
-    background: #14213d;
-    color: white;
-    text-align: center;
-    padding: 25px;
-}
+        header {
+            background: #176b45;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
 
-h2 {
-    text-align: center;
-    color: #14213d;
-}
+        header h1 {
+            margin: 0;
+        }
 
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+        nav {
+            background: #124d34;
+            padding: 12px;
+            text-align: center;
+        }
 
-.card {
-    background: white;
-    width: 220px;
-    margin: 15px;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+        }
 
-.card img {
-    width: 150px;
-    height: 120px;
-    object-fit: contain;
-}
+        h2 {
+            text-align: center;
+            color: #176b45;
+        }
 
-footer {
-    background: #14213d;
-    color: white;
-    text-align: center;
-    padding: 15px;
-}
-</style>
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            width: 180px;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px #ccc;
+        }
+
+        .card img {
+            width: 100%;
+            height: 130px;
+            object-fit: contain;
+        }
+
+        footer {
+            background: #124d34;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
-<h1>ThiruMurugan Store</h1>
-<p>Lshopping</p>
+    <h1>Thiru Murugan Store</h1>
+    <p>Everything You Need in One Place!</p>
 </header>
 
-<h2>food items and staionery item</h2>
+<nav>
+    <a href="#personal">Personal Care</a>
+    <a href="#snacks">Snacks</a>
+    <a href="#cleaning">Cleaning</a>
+    <a href="#stationery">Stationery</a>
+</nav>
 
-<div class="container">
+<h2 id="personal">Personal Care Products</h2>
+<div class="products">
+    <div class="card">
+        <img src="images/soap.jpg" alt="Soap">
+        <h3>Soap</h3>
+        <p>Price: ₹25</p>
+    </div>
 
-<div class="card">
-<img src="https://placehold.co/150x120?text=Soap">
-<h3>Soap</h3>
+    <div class="card">
+        <img src="images/shampoo.jpg" alt="Shampoo">
+        <h3>Shampoo</h3>
+        <p>Price: ₹50</p>
+    </div>
+
+    <div class="card">
+        <img src="images/powder.jpg" alt="Powder">
+        <h3>Powder</h3>
+        <p>Price: ₹60</p>
+    </div>
 </div>
 
-<div class="card">
-<img src="https://placehold.co/150x120?text=Snacks">
-<h3>Snacks</h3>
-</div>
-    
-<div class="card">
-<img src="https://placehold.co/150x120?text=Biscuits">
-<h3>Biscuits</h3>
-</div>
-
-<div class="card">
-<img src="https://placehold.co/150x120?text=cleaning product">
-<h3>cleaning product</h3>
+<h2>Fragrance Products</h2>
+<div class="products">
+    <div class="card">
+        <img src="images/perfume.jpg" alt="Perfume">
+        <h3>Perfume</h3>
+        <p>Price: ₹100</p>
+    </div>
 </div>
 
-<div class="card">
-<img src="https://placehold.co/150x120?text=stationery">
-<h3>stationery</h3>
+<h2 id="snacks">Snacks & Biscuits</h2>
+<div class="products">
+    <div class="card">
+        <img src="images/biscuits.jpg" alt="Biscuits">
+        <h3>Biscuits</h3>
+        <p>Price: ₹10</p>
+    </div>
+
+    <div class="card">
+        <img src="images/snacks.jpg" alt="Snacks">
+        <h3>Snacks</h3>
+        <p>Price: ₹20</p>
+    </div>
 </div>
 
-<div class="card">
-<img src="https://placehold.co/150x120?text=Fragrance">
-<h3>Fragrance</h3>
+<h2 id="cleaning">Cleaning Products</h2>
+<div class="products">
+    <div class="card">
+        <img src="images/detergent.jpg" alt="Detergent">
+        <h3>Detergent</h3>
+        <p>Price: ₹50</p>
+    </div>
+
+    <div class="card">
+        <img src="images/cleaner.jpg" alt="Toilet Cleaner">
+        <h3>Toilet Cleaner</h3>
+        <p>Price: ₹80</p>
+    </div>
 </div>
 
-</div>
+<h2 id="stationery">Stationery Items</h2>
+<div class="products">
+    <div class="card">
+        <img src="images/pen.jpg" alt="Pen">
+        <h3>Pen</h3>
+        <p>Price: ₹10</p>
+    </div>
 
-<footer>
-<p>Thiru Murugan store</p>
-</footer>
-
-</body>
-</html>
+    <div class="card">
+        <img src="images/notebook.jpg" alt="Notebook">
+       
