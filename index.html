@@ -4,11 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Thiru Murugan Store - Online Shopping</title>
+<title>Thiru Murugan Store</title>
 
 <style>
 * {
     box-sizing: border-box;
+}
+.logo {
+    width: 260px;
+    max-width: 85%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+    border-radius: 10px;
 }
 
 body {
@@ -17,25 +25,19 @@ body {
     background: linear-gradient(135deg, #e0f7fa, #fff3e0, #e8f5e9);
 }
 
-/* HEADER */
+<header>
+    <img
+        src="image_ceb4a5c5.jpg"
+        alt="Thiru Murugan Stores Logo"
+        class="logo"
+    >
 
-header {
-    background: linear-gradient(120deg, #087f5b, #20a36b);
-    color: white;
-    text-align: center;
-    padding: 25px 10px;
-}
+    <p>Your Family Shopping Destination</p>
+</header>
 
 header h1 {
-    font-size: 30px;
     margin: 5px;
 }
-
-header p {
-    font-size: 17px;
-}
-
-/* CONTACT BAR */
 
 .contact {
     background: #064e3b;
@@ -45,30 +47,19 @@ header p {
 }
 
 .contact a {
-    color: #ffe082;
+    color: yellow;
     text-decoration: none;
-    font-weight: bold;
 }
-
-/* HERO SECTION */
 
 .hero {
     text-align: center;
-    padding: 40px 15px;
-    background: linear-gradient(120deg, #fff8e1, #dcedc8);
+    padding: 30px 10px;
+    background: #fff8e1;
 }
 
 .hero h2 {
     color: #087f5b;
-    font-size: 30px;
 }
-
-.hero p {
-    font-size: 17px;
-    color: #444;
-}
-
-/* SEARCH */
 
 .search-box {
     display: flex;
@@ -83,31 +74,25 @@ header p {
     padding: 13px;
     border: 2px solid #16834a;
     border-radius: 8px;
-    font-size: 16px;
 }
 
 button {
     background: #16834a;
     color: white;
     border: none;
-    padding: 11px 16px;
+    padding: 10px 15px;
     border-radius: 7px;
     cursor: pointer;
-    font-size: 15px;
 }
 
 button:hover {
     background: #064e3b;
 }
 
-/* HEADINGS */
-
 h2 {
     text-align: center;
     color: #087f5b;
 }
-
-/* PRODUCT CARDS */
 
 .container {
     display: flex;
@@ -119,22 +104,16 @@ h2 {
 
 .card {
     background: white;
-    width: 190px;
+    width: 185px;
     padding: 15px;
     text-align: center;
     border-radius: 14px;
     box-shadow: 0 4px 12px #0002;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 7px 18px #0003;
 }
 
 .card img {
     width: 100%;
-    height: 135px;
+    height: 130px;
     object-fit: contain;
 }
 
@@ -148,31 +127,55 @@ h2 {
     font-size: 17px;
 }
 
-.cart-button {
-    margin-top: 5px;
+.cart {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px #0002;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+}
+
+.cart-item button {
+    margin: 3px;
+}
+
+.remove {
+    background: #d32f2f;
+}
+
+.total {
+    text-align: right;
+    font-size: 22px;
+    color: #087f5b;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.order-button {
+    display: block;
+    background: #25D366;
+    color: white;
+    font-size: 17px;
+    padding: 14px;
+    margin: 20px auto 0;
     width: 100%;
+    max-width: 350px;
 }
 
 #backButton {
     display: none;
     margin: 10px auto;
 }
-
-/* CART */
-
-.cart {
-    text-align: center;
-    background: white;
-    padding: 12px;
-    margin: 15px auto;
-    width: fit-content;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px #0002;
-    color: #087f5b;
-    font-weight: bold;
-}
-
-/* FOOTER */
 
 footer {
     background: #064e3b;
@@ -182,19 +185,7 @@ footer {
     margin-top: 30px;
 }
 
-footer a {
-    color: #ffe082;
-}
-
 @media(max-width: 500px) {
-    header h1 {
-        font-size: 23px;
-    }
-
-    .hero h2 {
-        font-size: 23px;
-    }
-
     .card {
         width: 155px;
     }
@@ -210,27 +201,44 @@ footer a {
 </header>
 
 <div class="contact">
-    📞 Contact Us:
-    <a href="tel:8072506321">8072506321</a>
+    📞 Contact:
+    <a href="tel:9344172900">9344172900</a>
 </div>
 
 <section class="hero">
     <h2>Welcome to Online Shopping!</h2>
-    <p>Everything You Need, All in One Place.</p>
-    <p>✨ Quality Products | Best Prices | Friendly Service ✨</p>
+    <p>Everything You Need in One Place.</p>
+    <p>✨ Quality Products | Best Prices ✨</p>
 </section>
 
+<h2>🛒 Shopping Cart</h2>
+
 <div class="cart">
-    🛒 My Cart: <span id="cartCount">0</span> Items
+
+    <div id="cartItems">
+        Your cart is empty!
+    </div>
+
+    <div class="total">
+        Total: ₹<span id="total">0</span>
+    </div>
+
+    <button class="order-button" onclick="placeOrder()">
+        📲 Place Order on WhatsApp
+    </button>
+
 </div>
 
 <div class="search-box">
+
     <input
         type="text"
         id="searchInput"
-        placeholder="Search your favourite products..."
+        placeholder="Search products..."
     >
+
     <button onclick="searchProducts()">Search</button>
+
 </div>
 
 <h2 id="heading">Shop by Categories</h2>
@@ -242,7 +250,7 @@ footer a {
 <footer>
     <h2 style="color:white;">Thiru Murugan Store</h2>
     <p>Thank you for shopping with us!</p>
-    <p>📞 8072506321</p>
+    <p>📞 9344172900</p>
     <p>© 2026 Thiru Murugan Store</p>
 </footer>
 
@@ -260,7 +268,7 @@ const categories = [
 ];
 
 
-// PRODUCTS AND PRICES
+// PRODUCTS
 
 const products = {
 
@@ -271,7 +279,7 @@ const products = {
     ["Medimix", "medimix.jpg.jpg", 58],
     ["Dettol", "dettol.jpg.jpg", 45],
     ["Santoor", "santoor.jpg.jpg", 45],
-    ["Lifebuoy", "lifebuoy.jgp.jpg", 55]
+    ["Lifebuoy", "lifebuoy.jpg.jpg", 55]
 ],
 
 "Shampoo": [
@@ -280,7 +288,7 @@ const products = {
     ["Dove", "dove.jpg.jpg", 220],
     ["Head & Shoulders", "head-and-shoulders.jpg.jpg", 230],
     ["Pantene", "pantene.jpg.jpg", 155],
-    ["Chik", "chick.jpg.jpg", 1],
+    ["Chik", "chik.jpg.jpg", 1],
     ["Meera", "meera.jpg.jpg", 170]
 ],
 
@@ -309,7 +317,7 @@ const products = {
 "Biscuits": [
     ["Good Day", "good-day.jpg.jpg", 10],
     ["Marie Gold", "marie-gold.jpg.jpg", 10],
-    ["Parle-G", "parlie-g.jpg.jpg", 3],
+    ["Parle-G", "parle-g.jpg.jpg", 3],
     ["50-50", "50-50.jpg.jpg", 10],
     ["Bourbon", "bourbon.jpg.jpg", 10],
     ["Dark Fantasy", "dark-fantasy.jpg.jpg", 60],
@@ -327,14 +335,20 @@ const products = {
 };
 
 
-// SHOW CATEGORIES
+// SHOPPING CART
+
+let cart = [];
+
+
+// SHOW HOME
 
 function showHome() {
 
     document.getElementById("heading").innerText =
         "Shop by Categories";
 
-    document.getElementById("backButton").style.display = "none";
+    document.getElementById("backButton").style.display =
+        "none";
 
     document.getElementById("searchInput").value = "";
 
@@ -356,7 +370,9 @@ function showHome() {
 
             </div>
         `;
+
     });
+
 }
 
 
@@ -369,8 +385,6 @@ function showProducts(categoryName) {
 
     document.getElementById("backButton").style.display =
         "block";
-
-    document.getElementById("searchInput").value = "";
 
     let display = document.getElementById("display");
 
@@ -387,14 +401,138 @@ function showProducts(categoryName) {
 
                 <p class="price">Price: ₹${product[2]}</p>
 
-                <button class="cart-button"
-                    onclick="addToCart()">
+                <button onclick="addToCart('${product[0]}')">
                     🛒 Add to Cart
                 </button>
 
             </div>
         `;
+
     });
+
+}
+
+
+// ADD TO CART
+
+function addToCart(productName) {
+
+    let product = null;
+
+    for (let category in products) {
+
+        product = products[category].find(
+            item => item[0] === productName
+        );
+
+        if (product) break;
+    }
+
+    if (!product) return;
+
+    let existing = cart.find(
+        item => item.name === productName
+    );
+
+    if (existing) {
+        existing.quantity++;
+    } else {
+        cart.push({
+            name: product[0],
+            price: product[2],
+            quantity: 1
+        });
+    }
+
+    updateCart();
+
+}
+
+
+// UPDATE CART
+
+function updateCart() {
+
+    let cartItems = document.getElementById("cartItems");
+
+    let total = 0;
+
+    cartItems.innerHTML = "";
+
+    if (cart.length === 0) {
+
+        cartItems.innerHTML = "Your cart is empty!";
+
+    }
+
+    cart.forEach((item, index) => {
+
+        let itemTotal = item.price * item.quantity;
+
+        total += itemTotal;
+
+        cartItems.innerHTML += `
+
+            <div class="cart-item">
+
+                <div>
+                    <strong>${item.name}</strong>
+                    <br>
+                    ₹${item.price} × ${item.quantity}
+                    = ₹${itemTotal}
+                </div>
+
+                <div>
+
+                    <button onclick="changeQuantity(${index}, -1)">
+                        −
+                    </button>
+
+                    <button onclick="changeQuantity(${index}, 1)">
+                        +
+                    </button>
+
+                    <button class="remove"
+                        onclick="removeItem(${index})">
+                        Remove
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+    document.getElementById("total").innerText = total;
+
+}
+
+
+// CHANGE QUANTITY
+
+function changeQuantity(index, change) {
+
+    cart[index].quantity += change;
+
+    if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+    }
+
+    updateCart();
+
+}
+
+
+// REMOVE ITEM
+
+function removeItem(index) {
+
+    cart.splice(index, 1);
+
+    updateCart();
+
 }
 
 
@@ -431,6 +569,7 @@ function searchProducts() {
                 found = true;
 
                 display.innerHTML += `
+
                     <div class="card">
 
                         <img src="${product[1]}" alt="${product[0]}">
@@ -443,54 +582,85 @@ function searchProducts() {
                             Price: ₹${product[2]}
                         </p>
 
-                        <button class="cart-button"
-                            onclick="addToCart()">
+                        <button onclick="addToCart('${product[0]}')">
                             🛒 Add to Cart
                         </button>
 
                     </div>
+
                 `;
+
             }
+
         });
+
     }
 
     if (!found) {
         display.innerHTML =
-            "<h3>Sorry! No products found.</h3>";
+            "<h3>No products found!</h3>";
     }
+
 }
 
 
-// SEARCH USING ENTER KEY
+// ENTER KEY SEARCH
 
 document.getElementById("searchInput")
-    .addEventListener("keydown", function(event) {
+.addEventListener("keydown", function(event) {
 
-        if (event.key === "Enter") {
-            searchProducts();
-        }
+    if (event.key === "Enter") {
+        searchProducts();
+    }
+
+});
+
+
+// PLACE ORDER THROUGH WHATSAPP
+
+function placeOrder() {
+
+    if (cart.length === 0) {
+
+        alert("Your cart is empty! Please add products.");
+
+        return;
+    }
+
+    let message = "Hello Thiru Murugan Store!%0A";
+    message += "I would like to place an order.%0A%0A";
+
+    let total = 0;
+
+    cart.forEach(item => {
+
+        let itemTotal = item.price * item.quantity;
+
+        total += itemTotal;
+
+        message +=
+            item.name + " - " +
+            item.quantity + " x Rs." +
+            item.price + " = Rs." +
+            itemTotal + "%0A";
 
     });
 
+    message += "%0ATotal Amount: Rs." + total;
 
-// CART COUNT
+    let whatsappURL =
+        "https://wa.me/919344172900?text=" + message;
 
-let cartCount = 0;
+    window.open(whatsappURL, "_blank");
 
-function addToCart() {
-
-    cartCount++;
-
-    document.getElementById("cartCount").innerText =
-        cartCount;
-
-    alert("Product added to cart!");
 }
 
 
 // START WEBSITE
 
 showHome();
+
+updateCart();
 
 </script>
 
