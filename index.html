@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Thiru Murugan Store</title>
+<title>Thiru Murugan Store - Online Shopping</title>
 
 <style>
 * {
@@ -14,96 +14,190 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f5f5f5;
+    background: linear-gradient(135deg, #e0f7fa, #fff3e0, #e8f5e9);
 }
 
+/* HEADER */
+
 header {
-    background: #176b45;
+    background: linear-gradient(120deg, #087f5b, #20a36b);
     color: white;
     text-align: center;
-    padding: 25px;
+    padding: 25px 10px;
 }
 
 header h1 {
-    margin: 0;
-}
-
-nav {
-    background: #104d32;
-    padding: 12px;
-    text-align: center;
-}
-
-nav button {
-    background: white;
-    color: #104d32;
-    border: none;
-    padding: 10px 18px;
+    font-size: 30px;
     margin: 5px;
-    border-radius: 5px;
-    cursor: pointer;
+}
+
+header p {
+    font-size: 17px;
+}
+
+/* CONTACT BAR */
+
+.contact {
+    background: #064e3b;
+    color: white;
+    text-align: center;
+    padding: 12px;
+}
+
+.contact a {
+    color: #ffe082;
+    text-decoration: none;
     font-weight: bold;
 }
 
-.container {
-    padding: 20px;
+/* HERO SECTION */
+
+.hero {
+    text-align: center;
+    padding: 40px 15px;
+    background: linear-gradient(120deg, #fff8e1, #dcedc8);
 }
+
+.hero h2 {
+    color: #087f5b;
+    font-size: 30px;
+}
+
+.hero p {
+    font-size: 17px;
+    color: #444;
+}
+
+/* SEARCH */
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px 10px;
+}
+
+.search-box input {
+    width: 65%;
+    max-width: 450px;
+    padding: 13px;
+    border: 2px solid #16834a;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    background: #16834a;
+    color: white;
+    border: none;
+    padding: 11px 16px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background: #064e3b;
+}
+
+/* HEADINGS */
 
 h2 {
     text-align: center;
-    color: #176b45;
+    color: #087f5b;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+/* PRODUCT CARDS */
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
+    padding: 20px;
 }
 
 .card {
     background: white;
+    width: 190px;
     padding: 15px;
-    border-radius: 10px;
     text-align: center;
-    box-shadow: 0 2px 8px #ccc;
-    cursor: pointer;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px #0002;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 7px 18px #0003;
 }
 
 .card img {
     width: 100%;
-    height: 160px;
+    height: 135px;
     object-fit: contain;
-    border-radius: 8px;
 }
 
 .card h3 {
-    color: #176b45;
+    color: #087f5b;
 }
 
 .price {
-    color: #444;
+    color: #e65100;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.cart-button {
+    margin-top: 5px;
+    width: 100%;
+}
+
+#backButton {
+    display: none;
+    margin: 10px auto;
+}
+
+/* CART */
+
+.cart {
+    text-align: center;
+    background: white;
+    padding: 12px;
+    margin: 15px auto;
+    width: fit-content;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #0002;
+    color: #087f5b;
     font-weight: bold;
 }
 
-button {
-    cursor: pointer;
-}
-
-.back-button {
-    background: #176b45;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
+/* FOOTER */
 
 footer {
-    background: #104d32;
+    background: #064e3b;
     color: white;
     text-align: center;
-    padding: 15px;
+    padding: 25px;
     margin-top: 30px;
+}
+
+footer a {
+    color: #ffe082;
+}
+
+@media(max-width: 500px) {
+    header h1 {
+        font-size: 23px;
+    }
+
+    .hero h2 {
+        font-size: 23px;
+    }
+
+    .card {
+        width: 155px;
+    }
 }
 </style>
 </head>
@@ -111,107 +205,50 @@ footer {
 <body>
 
 <header>
-    <h1>Thiru Murugan Store</h1>
-    <p>Welcome to Our Family Store</p>
+    <h1>🛍️ Thiru Murugan Store</h1>
+    <p>Your Family Shopping Destination</p>
 </header>
 
-<nav>
-    <button onclick="showHome()">Home</button>
-</nav>
-
-<div class="container">
-
-    <div id="home">
-        <h2>Our Product Categories</h2>
-        <div class="grid" id="categoryList"></div>
-    </div>
-
-    <div id="products" style="display:none;">
-        <button class="back-button" onclick="showHome()">
-            ← Back to Home
-        </button>
-
-        <h2 id="categoryTitle"></h2>
-
-        <div class="grid" id="productList"></div>
-    </div>
-
+<div class="contact">
+    📞 Contact Us:
+    <a href="tel:8072506321">8072506321</a>
 </div>
 
+<section class="hero">
+    <h2>Welcome to Online Shopping!</h2>
+    <p>Everything You Need, All in One Place.</p>
+    <p>✨ Quality Products | Best Prices | Friendly Service ✨</p>
+</section>
+
+<div class="cart">
+    🛒 My Cart: <span id="cartCount">0</span> Items
+</div>
+
+<div class="search-box">
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search your favourite products..."
+    >
+    <button onclick="searchProducts()">Search</button>
+</div>
+
+<h2 id="heading">Shop by Categories</h2>
+
+<button id="backButton" onclick="showHome()">Back to Home</button>
+
+<div class="container" id="display"></div>
+
 <footer>
-    <p>Thank you for visiting Thiru Murugan Store!</p>
+    <h2 style="color:white;">Thiru Murugan Store</h2>
+    <p>Thank you for shopping with us!</p>
+    <p>📞 8072506321</p>
+    <p>© 2026 Thiru Murugan Store</p>
 </footer>
 
 <script>
 
-// PRODUCT DETAILS
-
-const products = {
-
-    "Soap": [
-        ["Lux", "lux.jpg.jpg"],
-        ["Hamam", "hamam.jpg.jpg"],
-        ["Cinthol", "cinthol.jpg.jpg"],
-        ["Medimix", "medimix.jpg.jpg"],
-        ["Dettol", "dettol.jpg.jpg"],
-        ["Santoor", "santoor.jpg.jpg"],
-        ["Lifebuoy", "lifebuoy.jgp.jpg"]
-    ],
-
-    "Shampoo": [
-        ["Clinic Plus", "clinic-plus.jpg.jpg"],
-        ["Sunsilk", "sunsilk.jpg.jpg"],
-        ["Dove", "dove.jpg.jpg"],
-        ["Head & Shoulders", "head-and-shoulders.jpg.jpg"],
-        ["Pantene", "pantene.jpg.jpg"],
-        ["Chik", "chick.jpg.jpg"],
-        ["Meera", "meera.jpg.jpg"]
-    ],
-
-    "Cleaning Products": [
-        ["Harpic", "harpic.jpg.jpg"],
-        ["Lizol", "lizol.jpg.jpg"],
-        ["Dettol", "dettol-cleaner.jpg.jpg"],
-        ["Domex", "domex.jpg.jpg"],
-        ["Vim", "vim.jpg.jpg"],
-        ["Pril", "pril.jpg.jpg"],
-        ["Surf Excel", "surf-excel.jpg.jpg"],
-        ["Tide", "tide.jpg.jpg"],
-        ["Rin", "rin.jpg.jpg"]
-    ],
-
-    "Snacks": [
-        ["Lays", "lays.jpg.jpg"],
-        ["Kurkure", "kurkure.jpg.jpg"],
-        ["Bingo", "bingo.jpg.jpg"],
-        ["Dairy Milk", "dairy-milk.jpg.jpg"],
-        ["5 Star", "5-star.jpg.jpg"],
-        ["KitKat", "kitkat.jpg.jpg"],
-        ["Munch", "munch.jpg.jpg"]
-    ],
-
-    "Biscuits": [
-        ["Good Day", "good-day.jpg.jpg"],
-        ["Marie Gold", "marie-gold.jpg.jpg"],
-        ["Parle-G", "parlie-g.jpg.jpg"],
-        ["50-50", "50-50.jpg.jpg"],
-        ["Bourbon", "bourbon.jpg.jpg"],
-        ["Dark Fantasy", "dark-fantasy.jpg.jpg"],
-        ["Milk Bikis", "milk-bikis.jpg.jpg"],
-        ["Hide & Seek", "hide-and-seek.jpg.jpg"],
-        ["Jim Jam", "jim-jam.jpg.jpg"]
-    ],
-
-    "Perfume": [
-        ["Fogg", "fogg.jpg.jpg"],
-        ["Axe", "axe.jpg.jpg"],
-        ["Park Avenue", "park-avenue.jpg.jpg"]
-    ]
-
-};
-
-
-// CATEGORY IMAGES
+// CATEGORIES
 
 const categories = [
     ["Soap", "lux.jpg.jpg"],
@@ -223,57 +260,231 @@ const categories = [
 ];
 
 
-// DISPLAY CATEGORIES
+// PRODUCTS AND PRICES
+
+const products = {
+
+"Soap": [
+    ["Lux", "lux.jpg.jpg", 50],
+    ["Hamam", "hamam.jpg.jpg", 57],
+    ["Cinthol", "cinthol.jpg.jpg", 55],
+    ["Medimix", "medimix.jpg.jpg", 58],
+    ["Dettol", "dettol.jpg.jpg", 45],
+    ["Santoor", "santoor.jpg.jpg", 45],
+    ["Lifebuoy", "lifebuoy.jpg.jpg", 55]
+],
+
+"Shampoo": [
+    ["Clinic Plus", "clinic-plus.jpg.jpg", 1],
+    ["Sunsilk", "sunsilk.jpg.jpg", 180],
+    ["Dove", "dove.jpg.jpg", 220],
+    ["Head & Shoulders", "head-and-shoulders.jpg.jpg", 230],
+    ["Pantene", "pantene.jpg.jpg", 155],
+    ["Chik", "chik.jpg.jpg", 1],
+    ["Meera", "meera.jpg.jpg", 170]
+],
+
+"Cleaning Products": [
+    ["Harpic", "harpic.jpg.jpg", 50],
+    ["Lizol", "lizol.jpg.jpg", 40],
+    ["Dettol", "dettol-cleaner.jpg.jpg", 50],
+    ["Domex", "domex.jpg.jpg", 75],
+    ["Vim", "vim.jpg.jpg", 20],
+    ["Pril", "pril.jpg.jpg", 55],
+    ["Surf Excel", "surf-excel.jpg.jpg", 35],
+    ["Tide", "tide.jpg.jpg", 45],
+    ["Rin", "rin.jpg.jpg", 55]
+],
+
+"Snacks": [
+    ["Lays", "lays.jpg.jpg", 10],
+    ["Kurkure", "kurkure.jpg.jpg", 10],
+    ["Bingo", "bingo.jpg.jpg", 20],
+    ["Dairy Milk", "dairy-milk.jpg.jpg", 45],
+    ["5 Star", "5-star.jpg.jpg", 10],
+    ["KitKat", "kitkat.jpg.jpg", 10],
+    ["Munch", "munch.jpg.jpg", 10]
+],
+
+"Biscuits": [
+    ["Good Day", "good-day.jpg.jpg", 10],
+    ["Marie Gold", "marie-gold.jpg.jpg", 10],
+    ["Parle-G", "parle-g.jpg.jpg", 3],
+    ["50-50", "50-50.jpg.jpg", 10],
+    ["Bourbon", "bourbon.jpg.jpg", 10],
+    ["Dark Fantasy", "dark-fantasy.jpg.jpg", 60],
+    ["Milk Bikis", "milk-bikis.jpg.jpg", 10],
+    ["Hide & Seek", "hide-and-seek.jpg.jpg", 30],
+    ["Jim Jam", "jim-jam.jpg.jpg", 10]
+],
+
+"Perfume": [
+    ["Fogg", "fogg.jpg.jpg", 175],
+    ["Axe", "axe.jpg.jpg", 150],
+    ["Park Avenue", "park-avenue.jpg.jpg", 165]
+]
+
+};
+
+
+// SHOW CATEGORIES
 
 function showHome() {
 
-    document.getElementById("home").style.display = "block";
-    document.getElementById("products").style.display = "none";
+    document.getElementById("heading").innerText =
+        "Shop by Categories";
 
-    const categoryList = document.getElementById("categoryList");
+    document.getElementById("backButton").style.display = "none";
 
-    categoryList.innerHTML = "";
+    document.getElementById("searchInput").value = "";
+
+    let display = document.getElementById("display");
+
+    display.innerHTML = "";
 
     categories.forEach(category => {
 
-        categoryList.innerHTML += `
-            <div class="card" onclick="showProducts('${category[0]}')">
+        display.innerHTML += `
+            <div class="card"
+                onclick="showProducts('${category[0]}')">
+
                 <img src="${category[1]}" alt="${category[0]}">
+
                 <h3>${category[0]}</h3>
-                <p>Click to view products</p>
+
+                <button>Explore Now</button>
+
             </div>
         `;
-
     });
-
 }
 
 
-// DISPLAY PRODUCTS
+// SHOW PRODUCTS
 
-function showProducts(category) {
+function showProducts(categoryName) {
 
-    document.getElementById("home").style.display = "none";
-    document.getElementById("products").style.display = "block";
+    document.getElementById("heading").innerText =
+        categoryName;
 
-    document.getElementById("categoryTitle").innerText = category;
+    document.getElementById("backButton").style.display =
+        "block";
 
-    const productList = document.getElementById("productList");
+    document.getElementById("searchInput").value = "";
 
-    productList.innerHTML = "";
+    let display = document.getElementById("display");
 
-    products[category].forEach(product => {
+    display.innerHTML = "";
 
-        productList.innerHTML += `
+    products[categoryName].forEach(product => {
+
+        display.innerHTML += `
             <div class="card">
+
                 <img src="${product[1]}" alt="${product[0]}">
+
                 <h3>${product[0]}</h3>
-                <p class="price">Price: Ask in Store</p>
+
+                <p class="price">Price: ₹${product[2]}</p>
+
+                <button class="cart-button"
+                    onclick="addToCart()">
+                    🛒 Add to Cart
+                </button>
+
             </div>
         `;
+    });
+}
+
+
+// SEARCH PRODUCTS
+
+function searchProducts() {
+
+    let value = document.getElementById("searchInput")
+        .value.toLowerCase().trim();
+
+    let display = document.getElementById("display");
+
+    display.innerHTML = "";
+
+    document.getElementById("heading").innerText =
+        "Search Results";
+
+    document.getElementById("backButton").style.display =
+        "block";
+
+    if (value === "") {
+        showHome();
+        return;
+    }
+
+    let found = false;
+
+    for (let category in products) {
+
+        products[category].forEach(product => {
+
+            if (product[0].toLowerCase().includes(value)) {
+
+                found = true;
+
+                display.innerHTML += `
+                    <div class="card">
+
+                        <img src="${product[1]}" alt="${product[0]}">
+
+                        <h3>${product[0]}</h3>
+
+                        <p>${category}</p>
+
+                        <p class="price">
+                            Price: ₹${product[2]}
+                        </p>
+
+                        <button class="cart-button"
+                            onclick="addToCart()">
+                            🛒 Add to Cart
+                        </button>
+
+                    </div>
+                `;
+            }
+        });
+    }
+
+    if (!found) {
+        display.innerHTML =
+            "<h3>Sorry! No products found.</h3>";
+    }
+}
+
+
+// SEARCH USING ENTER KEY
+
+document.getElementById("searchInput")
+    .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+            searchProducts();
+        }
 
     });
 
+
+// CART COUNT
+
+let cartCount = 0;
+
+function addToCart() {
+
+    cartCount++;
+
+    document.getElementById("cartCount").innerText =
+        cartCount;
+
+    alert("Product added to cart!");
 }
 
 
